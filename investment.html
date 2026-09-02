@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator - Valtivra</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0b0f19; color: #fff; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; }
+        .container { background: #1a2234; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); width: 100%; max-width: 450px; border: 1px solid #2d3748; }
+        h2 { color: #38bdf8; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #a0aec0; }
+        input { width: 100%; padding: 10px; background: #252f3f; border: 1px solid #2d3748; color: #fff; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #0284c7; border: none; color: white; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #0369a1; }
+        .result { margin-top: 20px; text-align: center; font-size: 18px; color: #38bdf8; }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #a0aec0; text-decoration: none; }
+        .back-link:hover { color: #fff; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📈 Investment Calculator</h2>
+        <div class="form-group">
+            <label>Initial Investment ($)</label>
+            <input type="number" id="invPrincipal" value="5000">
+        </div>
+        <div class="form-group">
+            <label>Annual Interest Rate (%)</label>
+            <input type="number" id="invRate" value="7">
+        </div>
+        <div class="form-group">
+            <label>Years</label>
+            <input type="number" id="invYears" value="5">
+        </div>
+        <button onclick="calculateInvestment()">Calculate Future Value</button>
+        <div class="result" id="invResult"></div>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+    <script>
+        function calculateInvestment() {
+            let p = parseFloat(document.getElementById('invPrincipal').value);
+            let r = parseFloat(document.getElementById('invRate').value) / 100;
+            let t = parseFloat(document.getElementById('invYears').value);
+            let futureValue = p * Math.pow((1 + r), t);
+            document.getElementById('invResult').innerHTML = "Future Value: $" + futureValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>
