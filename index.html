@@ -9,165 +9,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Header & Navbar Styles */
-.site-header {
-    background-color: #1a2234;
-    border-bottom: 1px solid #2d3748;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.logo {
-    color: #fff;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-}
-.logo span {
-    color: #38bdf8;
-}
-
-/* Nav Links (PC View) */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.2s;
-    display: block;
-    padding: 8px 0;
-}
-
-.nav-links a:hover {
-    color: #38bdf8;
-}
-
-/* Dropdown Submenu (PC) */
-.dropdown-menu {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #1a2234;
-    border: 1px solid #2d3748;
-    border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    padding: 10px 0;
-    min-width: 200px;
-    display: none; /* මුලින් වැසී ඇත */
-}
-
-.dropdown-menu li a {
-    padding: 10px 20px;
-    color: #cbd5e1;
-    white-space: nowrap;
-}
-
-.dropdown-menu li a:hover {
-    background: #252f3f;
-    color: #38bdf8;
-}
-
-/* PC එකේදී Hover කළ විට Submenu පෙන්වීම */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Mobile Menu Toggle Icon */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-}
-
-/* Responsive Design (Mobile View - 768px හෝ අඩු තිර සඳහා) */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #1a2234;
-        flex-direction: column;
-        align-items: flex-start;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        border-bottom: 1px solid #2d3748;
-        padding: 0 20px;
-        box-sizing: border-box;
-    }
-
-    .nav-links.active {
-        max-height: 500px; /* Menu එක විවෘත වන විට උස */
-        padding: 15px 20px;
-    }
-
-    .nav-links li {
-        width: 100%;
-    }
-
-    /* Mobile එකේදී Submenu එක සාමාන්‍ය පරිදි යටට විවෘත වීම */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: #111827;
-        padding-left: 15px;
-        display: none;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-}
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #0b0f19; color: #e2e8f0; overflow-x: hidden; }
 
-        /* Header & Nav */
-        header { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: #38bdf8; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-item { position: relative; }
-        .nav-item > a { color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 0; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
-        .nav-item:hover > a { color: #38bdf8; }
+        /* Header & Navbar Styles */
+        .site-header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo span {
+            color: #38bdf8;
+        }
+
+        /* Nav Links (PC View) */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item > a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-item:hover > a {
+            color: #38bdf8;
+        }
         
-        /* Dropdown */
-        .dropdown { position: absolute; top: 100%; left: 0; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; list-style: none; padding: 0.5rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown li a { padding: 0.7rem 1.2rem; color: #cbd5e1; text-decoration: none; display: block; font-size: 0.88rem; }
-        .dropdown li a:hover { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
+        /* Dropdown Submenu (PC) */
+        .dropdown-menu {
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 1001;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            padding: 0.7rem 1.2rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            font-size: 0.88rem;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a:hover {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+
+        /* Mobile Menu Toggle Icon */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
 
         /* Hero Section */
         .hero { max-width: 1000px; margin: 4rem auto 2rem auto; text-align: center; padding: 0 2rem; }
@@ -207,140 +160,173 @@
         .newsletter-form input { flex: 1; padding: 0.8rem 1.2rem; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1); background: #0b0f19; color: #fff; outline: none; }
 
         /* Footer */
-        footer { background: #070a12; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 3rem 2rem 1.5rem 2rem; margin-top: 5rem; text-align: center; }
-        footer p { color: #64748b; font-size: 0.85rem; margin-top: 1.5rem; }
+        .site-footer { background: #070a12; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 3rem 2rem 1.5rem 2rem; margin-top: 5rem; text-align: center; }
+        .site-footer p { color: #64748b; font-size: 0.85rem; margin-top: 1.5rem; }
         .disclaimer { max-width: 800px; margin: 0 auto; color: #475569; font-size: 0.8rem; line-height: 1.4; }
 
-       /* Modal Box (Dark Theme එකට හැරවීම) */
-.calc-modal-content {
-    background-color: #1a2234; /* වෙබ් අඩවියේ පසුබිමට ගැළපෙන Dark Background එකක් */
-    padding: 20px 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 350px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    position: relative;
-    animation: fadeIn 0.3s ease;
-    text-align: left;
-    border: 1px solid #2d3748;
-}
+        /* Modal Box */
+        .calc-modal-content {
+            background-color: #1a2234;
+            padding: 20px 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            position: relative;
+            text-align: left;
+            border: 1px solid #2d3748;
+        }
 
-/* Close Button (x) */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #a0aec0;
-}
-.close-btn:hover {
-    color: #ffffff;
-}
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #a0aec0;
+        }
+        .close-btn:hover { color: #ffffff; }
 
-/* Modal Title එක */
-.calc-modal-content h3 {
-    color: #ffffff !important;
-}
+        .calc-modal-content h3 { color: #ffffff !important; }
 
-/* Calculator List inside Pop-up */
-.calc-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-.calc-list li {
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    background: #252f3f; /* ලැයිස්තු අයිතම සඳහා අඳුරු පැහැයක් */
-    border: 1px solid #2d3748;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    font-weight: 500;
-    color: #ffffff !important; /* අකුරු පැහැදිලි සුදු පාටට */
-}
-.calc-list li:hover {
-    background: #2f3e56;
-    transform: translateX(3px);
-    color: #38bdf8 !important;
-}
-        /* More Calculators Trigger Text - මැදට ගැනීමට */
-.more-calculators-trigger {
-    text-align: center;      /* අකුරු මැදට ගනී */
-    margin: 20px auto;       /* ඉහළ පහළ පරතරය තබා වම් දකුණු ස්වයංක්‍රීයව මැද කරයි */
-    display: block;          /* Block element එකක් ලෙස සකසයි */
-    cursor: pointer;
-    color: #38bdf8;          /* සයිට් එකේ ත්‍රීම් එකට ගැළපෙන පාටක් */
-    font-weight: bold;
-    width: fit-content;      /* අවශ්‍ය ප්‍රමාණයට පමණක් ඉඩ ගනී */
-    transition: color 0.2s;
-}
+        .calc-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .calc-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #252f3f;
+            border: 1px solid #2d3748;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-weight: 500;
+            color: #ffffff !important;
+        }
+        .calc-list li:hover {
+            background: #2f3e56;
+            transform: translateX(3px);
+            color: #38bdf8 !important;
+        }
 
-.more-calculators-trigger:hover {
-    color: #6366f1;
-    text-decoration: underline;
-}
-        /* Modal Background Overlay - මෙය සම්පූර්ණයෙන්ම මැදට ගනී */
-.calc-modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* පසුබිම තරමක් අඳුරු කරයි */
-    display: none; /* මුලින් වැසී ඇත, JS මඟින් flex බවට මාරු වේ */
-    justify-content: center;
-    align-items: center;
-}
+        .more-calculators-trigger {
+            text-align: center;
+            margin: 20px auto;
+            display: block;
+            cursor: pointer;
+            color: #38bdf8;
+            font-weight: bold;
+            width: fit-content;
+            transition: color 0.2s;
+        }
+        .more-calculators-trigger:hover {
+            color: #6366f1;
+            text-decoration: underline;
+        }
+
+        .calc-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive Design (Mobile View) */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #0f172a;
+                flex-direction: column;
+                align-items: flex-start;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+
+            .nav-links.active {
+                max-height: 500px;
+                padding: 15px 20px;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #1e293b;
+                padding-left: 15px;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+            }
+
+            .nav-item:hover .dropdown-menu {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
 
-  <!-- Header Navigation -->
-<header class="site-header">
-    <div class="nav-container">
-        <!-- Logo එක -->
-        <a href="index.html" class="logo">
-            <i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span>
-        </a>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span>
+            </a>
 
-        <!-- Mobile Menu Toggle Icon -->
-        <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
-            ☰
+            <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="investment.html">Investment Calculator</a></li>
+                        <li><a href="crypto.html">Crypto Profit</a></li>
+                        <li><a href="stocks.html">Stocks & Equities</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="loan.html">Loan Calculator</a></li>
+                        <li><a href="tax.html">Tax Calculator</a></li>
+                        <li><a href="budget.html">Budgeting Tools</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="markets.html">Markets</a></li>
+                <li><a href="tools.html">Tools</a></li>
+            </ul>
         </div>
-
-        <!-- Navigation Links -->
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            
-            <!-- Investing Category & Subcategories -->
-            <li class="dropdown nav-item">
-                <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="investment.html">Investment Calculator</a></li>
-                    <li><a href="crypto.html">Crypto Profit</a></li>
-                    <li><a href="stocks.html">Stocks & Equities</a></li>
-                </ul>
-            </li>
-
-            <!-- Personal Finance Category & Subcategories -->
-            <li class="dropdown nav-item">
-                <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="loan.html">Loan Calculator</a></li>
-                    <li><a href="tax.html">Tax Calculator</a></li>
-                    <li><a href="budget.html">Budgeting Tools</a></li>
-                </ul>
-            </li>
-
-            <li><a href="markets.html">Markets</a></li>
-            <li><a href="tools.html">Tools</a></li>
-        </ul>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <main class="hero">
@@ -389,18 +375,11 @@
                 <div class="total" id="resultDisplay">$21,589.25</div>
             </div>
         </div>
+
+        <div class="more-calculators-trigger" onclick="openCalculatorModal()">
+            <p>More Calculators <span>▼</span></p>
+        </div>
     </section>
-
-     <main>
-    <!-- මෙන්න මේ කොටසේ තමයි දැනට ඔයාගේ Main Calculator එක තියෙන්නේ -->
-    <div class="calculator-container">
-        <!-- Calculator Code එක මෙතන ඇත -->
-    </div>
-
-    <!-- 🟢 අපි අලුතින් එකතු කරන HTML කෝඩ් එක මෙතනට දාන්න -->
-    <div class="more-calculators-trigger" onclick="openCalculatorModal()">
-        <p>More Calculators <span>▼</span></p>
-    </div>
 
     <div id="calcModal" class="calc-modal">
         <div class="calc-modal-content">
@@ -414,7 +393,6 @@
             </ul>
         </div>
     </div>
-</main>
 
     <!-- Newsletter Brief Sign-up -->
     <section class="newsletter">
@@ -427,19 +405,18 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
+    <site-footer class="site-footer">
         <p class="disclaimer">Disclaimer: VALTIVRA is a financial media outlet providing educational content. We do not offer personalized investment or financial advice.</p>
         <p>&copy; 2026 VALTIVRA.COM. All rights reserved.</p>
-    </footer>
+    </site-footer>
+
+    <!-- JavaScript -->
     <script>
         function toggleMobileMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
-}
-    </script>
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
 
-    <!-- JavaScript for Calculator Functionality -->
-    <script>
         function calculateGrowth() {
             const p = parseFloat(document.getElementById('principal').value) || 0;
             const r = parseFloat(document.getElementById('rate').value) / 100 || 0;
@@ -448,42 +425,35 @@
             const total = p * Math.pow((1 + r), t);
             document.getElementById('resultDisplay').innerText = '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
         }
+
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+
+        function openCalculatorModal() {
+            document.getElementById('calcModal').style.display = 'flex';
+        }
+
+        function closeCalculatorModal() {
+            document.getElementById('calcModal').style.display = 'none';
+        }
+
+        function navigateToCalculator(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('calcModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
-    <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-    <script>
-        // Modal එක පෙන්වීම
-function openCalculatorModal() {
-    document.getElementById('calcModal').style.display = 'flex';
-}
-
-// Modal එක වැසීම
-function closeCalculatorModal() {
-    document.getElementById('calcModal').style.display = 'none';
-}
-
-// අදාළ Calculator එක වෙත යාම
-function navigateToCalculator(pageUrl) {
-    window.location.href = pageUrl;
-}
-
-// Modal එකෙන් පිටත ක්ලික් කළහොත් වැසීමට
-window.onclick = function(event) {
-    let modal = document.getElementById('calcModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-    </script>
-   
 </body>
 </html>
