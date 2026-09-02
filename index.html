@@ -24,7 +24,7 @@
         }
 
         .nav-container {
-            max-width: 1250px;
+            max-width: 1300px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -45,11 +45,37 @@
             color: #38bdf8;
         }
 
+        .nav-right-area {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        /* Search Categories Button Styles */
+        .search-btn {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #38bdf8;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+        .search-btn:hover {
+            background: #38bdf8;
+            color: #0b0f19;
+        }
+
         /* Nav Links (PC View) */
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin: 0;
             padding: 0;
             align-items: center;
@@ -63,7 +89,7 @@
             color: #94a3b8;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             padding: 0.5rem 0;
             transition: 0.3s;
             display: flex;
@@ -117,9 +143,101 @@
         /* Mobile Menu Toggle Icon */
         .menu-toggle {
             display: none;
-            font-size: 28px;
+            font-size: 24px;
             color: #fff;
             cursor: pointer;
+        }
+
+        /* Search Modal Overlay Styles */
+        .search-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+        }
+
+        .search-modal-content {
+            background-color: #111827;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            position: relative;
+        }
+
+        .search-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .search-header-row h3 {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .search-close-btn {
+            font-size: 24px;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+        .search-close-btn:hover { color: #fff; }
+
+        .search-input-box {
+            width: 100%;
+            padding: 12px 15px;
+            background: #0b0f19;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        .search-input-box:focus {
+            border-color: #38bdf8;
+        }
+
+        .search-results-list {
+            list-style: none;
+            max-height: 320px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .search-results-list li {
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.2s;
+        }
+
+        .search-results-list li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .search-results-list li:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+        .search-results-list li:hover a {
+            color: #38bdf8;
         }
 
         /* Hero Section */
@@ -164,7 +282,7 @@
         .site-footer p { color: #64748b; font-size: 0.85rem; margin-top: 1.5rem; }
         .disclaimer { max-width: 800px; margin: 0 auto; color: #475569; font-size: 0.8rem; line-height: 1.4; }
 
-        /* Modal Box */
+        /* Modal Box for Calculators */
         .calc-modal-content {
             background-color: #1a2234;
             padding: 20px 30px;
@@ -298,8 +416,15 @@
                 <i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span>
             </a>
 
-            <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
-                ☰
+            <div class="nav-right-area">
+                <!-- Search Categories Button -->
+                <button class="search-btn" onclick="openSearchModal()">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search Categories
+                </button>
+
+                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                    ☰
+                </div>
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -377,7 +502,7 @@
                     </ul>
                 </li>
 
-                <!-- MORE DROPDOWN (Remaining Categories 7 to 12 as Main Links) -->
+                <!-- MORE DROPDOWN -->
                 <li class="nav-item">
                     <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
                     <ul class="dropdown-menu">
@@ -392,6 +517,68 @@
             </ul>
         </div>
     </header>
+
+    <!-- Search Categories Modal Popup -->
+    <div id="searchModal" class="search-modal">
+        <div class="search-modal-content">
+            <div class="search-header-row">
+                <h3>Search All Categories & Topics</h3>
+                <span class="search-close-btn" onclick="closeSearchModal()">&times;</span>
+            </div>
+            <input type="text" id="categorySearchInput" class="search-input-box" placeholder="Type to search categories (e.g. Stocks, Crypto, Budgeting)..." onkeyup="filterCategories()">
+            <ul id="searchResultsList" class="search-results-list">
+                <!-- Investing Subcategories -->
+                <li><a href="stocks-equities.html">Investing: Stocks & Equities</a></li>
+                <li><a href="etfs.html">Investing: ETFs</a></li>
+                <li><a href="mutual-funds.html">Investing: Mutual Funds</a></li>
+                <li><a href="bonds.html">Investing: Bonds</a></li>
+                <li><a href="dividend-investing.html">Investing: Dividend Investing</a></li>
+                
+                <!-- Stock Market Subcategories -->
+                <li><a href="market-news.html">Stock Market: Market News</a></li>
+                <li><a href="stock-analysis.html">Stock Market: Stock Analysis</a></li>
+                <li><a href="ipos.html">Stock Market: IPOs</a></li>
+                <li><a href="market-indices.html">Stock Market: Market Indices</a></li>
+                <li><a href="earnings.html">Stock Market: Earnings & Results</a></li>
+
+                <!-- Personal Finance Subcategories -->
+                <li><a href="budgeting.html">Personal Finance: Budgeting</a></li>
+                <li><a href="saving-money.html">Personal Finance: Saving Money</a></li>
+                <li><a href="credit-debt.html">Personal Finance: Credit & Debt</a></li>
+                <li><a href="banking.html">Personal Finance: Banking</a></li>
+                <li><a href="financial-planning.html">Personal Finance: Financial Planning</a></li>
+
+                <!-- Cryptocurrency Subcategories -->
+                <li><a href="bitcoin.html">Crypto: Bitcoin</a></li>
+                <li><a href="ethereum.html">Crypto: Ethereum</a></li>
+                <li><a href="altcoins.html">Crypto: Altcoins</a></li>
+                <li><a href="defi.html">Crypto: DeFi</a></li>
+                <li><a href="crypto-regulation.html">Crypto: Crypto Regulation</a></li>
+
+                <!-- Forex Subcategories -->
+                <li><a href="currency-markets.html">Forex: Currency Markets</a></li>
+                <li><a href="forex-news.html">Forex: Forex News</a></li>
+                <li><a href="trading-strategies.html">Forex: Trading Strategies</a></li>
+                <li><a href="major-pairs.html">Forex: Major Currency Pairs</a></li>
+                <li><a href="central-banks.html">Forex: Central Banks</a></li>
+
+                <!-- Business & Economy Subcategories -->
+                <li><a href="global-economy.html">Business: Global Economy</a></li>
+                <li><a href="business-news.html">Business: Business News</a></li>
+                <li><a href="economic-indicators.html">Business: Economic Indicators</a></li>
+                <li><a href="inflation.html">Business: Inflation</a></li>
+                <li><a href="interest-rates.html">Business: Interest Rates</a></li>
+
+                <!-- More Categories -->
+                <li><a href="trading.html">More: Trading</a></li>
+                <li><a href="wealth-building.html">More: Wealth Building</a></li>
+                <li><a href="real-estate.html">More: Real Estate</a></li>
+                <li><a href="banking-fintech.html">More: Banking & FinTech</a></li>
+                <li><a href="commodities.html">More: Commodities</a></li>
+                <li><a href="financial-education.html">More: Financial Education</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <main class="hero">
@@ -501,6 +688,33 @@
             });
         }
 
+        /* Search Modal Functions */
+        function openSearchModal() {
+            document.getElementById('searchModal').style.display = 'flex';
+            document.getElementById('categorySearchInput').focus();
+        }
+
+        function closeSearchModal() {
+            document.getElementById('searchModal').style.display = 'none';
+        }
+
+        function filterCategories() {
+            let input = document.getElementById('categorySearchInput').value.toLowerCase();
+            let ul = document.getElementById('searchResultsList');
+            let li = ul.getElementsByTagName('li');
+
+            for (let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+                let txtValue = a.textContent || a.innerText;
+                if (txtValue.toLowerCase().indexOf(input) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        /* Calculator Modal Functions */
         function openCalculatorModal() {
             document.getElementById('calcModal').style.display = 'flex';
         }
@@ -514,9 +728,13 @@
         }
 
         window.onclick = function(event) {
-            let modal = document.getElementById('calcModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+            let searchModal = document.getElementById('searchModal');
+            let calcModal = document.getElementById('calcModal');
+            if (event.target == searchModal) {
+                searchModal.style.display = 'none';
+            }
+            if (event.target == calcModal) {
+                calcModal.style.display = 'none';
             }
         }
     </script>
