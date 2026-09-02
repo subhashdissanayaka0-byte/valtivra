@@ -2,6 +2,9 @@ backend:
   name: github
   repo: subhashdissanayaka-byte/valtivra
   branch: main
+  client_id: 1e1270610465cf8e77dad7342838f7e8dcb6bc2d
+  base_url: https://decap-cms-oauth.netlify.app
+  auth_endpoint: auth
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
