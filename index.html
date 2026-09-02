@@ -226,6 +226,31 @@
         </div>
     </section>
 
+     <main>
+    <!-- මෙන්න මේ කොටසේ තමයි දැනට ඔයාගේ Main Calculator එක තියෙන්නේ -->
+    <div class="calculator-container">
+        <!-- Calculator Code එක මෙතන ඇත -->
+    </div>
+
+    <!-- 🟢 අපි අලුතින් එකතු කරන HTML කෝඩ් එක මෙතනට දාන්න -->
+    <div class="more-calculators-trigger" onclick="openCalculatorModal()">
+        <p>More Calculators <span>▼</span></p>
+    </div>
+
+    <div id="calcModal" class="calc-modal">
+        <div class="calc-modal-content">
+            <span class="close-btn" onclick="closeCalculatorModal()">&times;</span>
+            <h3>Select a Calculator</h3>
+            <ul class="calc-list">
+                <li onclick="navigateToCalculator('investment.html')">📈 Investment Calculator</li>
+                <li onclick="navigateToCalculator('loan.html')">💰 Loan Calculator</li>
+                <li onclick="navigateToCalculator('crypto.html')">🪙 Crypto Profit Calculator</li>
+                <li onclick="navigateToCalculator('tax.html')">📊 Tax Calculator</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
     <!-- Newsletter Brief Sign-up -->
     <section class="newsletter">
         <h3>The VALTIVRA Brief</h3>
@@ -288,29 +313,6 @@ window.onclick = function(event) {
     }
 }
     </script>
-    <main>
-    <!-- මෙන්න මේ කොටසේ තමයි දැනට ඔයාගේ Main Calculator එක තියෙන්නේ -->
-    <div class="calculator-container">
-        <!-- Calculator Code එක මෙතන ඇත -->
-    </div>
-
-    <!-- 🟢 අපි අලුතින් එකතු කරන HTML කෝඩ් එක මෙතනට දාන්න -->
-    <div class="more-calculators-trigger" onclick="openCalculatorModal()">
-        <p>More Calculators <span>▼</span></p>
-    </div>
-
-    <div id="calcModal" class="calc-modal">
-        <div class="calc-modal-content">
-            <span class="close-btn" onclick="closeCalculatorModal()">&times;</span>
-            <h3>Select a Calculator</h3>
-            <ul class="calc-list">
-                <li onclick="navigateToCalculator('investment.html')">📈 Investment Calculator</li>
-                <li onclick="navigateToCalculator('loan.html')">💰 Loan Calculator</li>
-                <li onclick="navigateToCalculator('crypto.html')">🪙 Crypto Profit Calculator</li>
-                <li onclick="navigateToCalculator('tax.html')">📊 Tax Calculator</li>
-            </ul>
-        </div>
-    </div>
-</main>
+   
 </body>
 </html>
