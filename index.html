@@ -45,32 +45,6 @@
             color: #38bdf8;
         }
 
-        .nav-right-area {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        /* Search Categories Button Styles */
-        .search-btn {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: #38bdf8;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.3s;
-        }
-        .search-btn:hover {
-            background: #38bdf8;
-            color: #0b0f19;
-        }
-
         /* Nav Links (PC View) */
         .nav-links {
             list-style: none;
@@ -138,6 +112,35 @@
         .dropdown-menu li a:hover {
             background: rgba(56, 189, 248, 0.1);
             color: #38bdf8;
+        }
+
+        /* Search Button inside More Dropdown */
+        .dropdown-search-item {
+            padding: 0.4rem 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 4px;
+        }
+
+        .dropdown-search-btn {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #38bdf8;
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .dropdown-search-btn:hover {
+            background: #38bdf8;
+            color: #0b0f19;
         }
 
         /* Mobile Menu Toggle Icon */
@@ -416,15 +419,8 @@
                 <i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span>
             </a>
 
-            <div class="nav-right-area">
-                <!-- Search Categories Button -->
-                <button class="search-btn" onclick="openSearchModal()">
-                    <i class="fa-solid fa-magnifying-glass"></i> Search Categories
-                </button>
-
-                <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
-                    ☰
-                </div>
+            <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
+                ☰
             </div>
 
             <ul class="nav-links" id="navLinks">
@@ -502,10 +498,15 @@
                     </ul>
                 </li>
 
-                <!-- MORE DROPDOWN -->
+                <!-- MORE DROPDOWN with Search Button inside -->
                 <li class="nav-item">
                     <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
                     <ul class="dropdown-menu">
+                        <li class="dropdown-search-item">
+                            <button class="dropdown-search-btn" onclick="openSearchModal()">
+                                <i class="fa-solid fa-magnifying-glass"></i> Search Categories
+                            </button>
+                        </li>
                         <li><a href="trading.html">📈 Trading</a></li>
                         <li><a href="wealth-building.html">🚀 Wealth Building</a></li>
                         <li><a href="real-estate.html">🏠 Real Estate</a></li>
