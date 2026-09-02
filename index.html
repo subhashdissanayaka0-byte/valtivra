@@ -114,35 +114,6 @@
             color: #38bdf8;
         }
 
-        /* Search Button inside More Dropdown */
-        .dropdown-search-item {
-            padding: 0.4rem 0.8rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            margin-bottom: 4px;
-        }
-
-        .dropdown-search-btn {
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            color: #38bdf8;
-            width: 100%;
-            padding: 0.5rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.82rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .dropdown-search-btn:hover {
-            background: #38bdf8;
-            color: #0b0f19;
-        }
-
         /* Mobile Menu Toggle Icon */
         .menu-toggle {
             display: none;
@@ -247,8 +218,38 @@
         .hero { max-width: 1000px; margin: 4rem auto 2rem auto; text-align: center; padding: 0 2rem; }
         .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1.2rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.15rem; color: #94a3b8; line-height: 1.6; margin-bottom: 2rem; }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .btn-primary { background: #0284c7; color: white; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn-primary:hover { background: #0369a1; transform: translateY(-2px); }
+
+        /* Search Categories Hero Button Style */
+        .btn-search-category {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            cursor: pointer;
+        }
+        .btn-search-category:hover {
+            background: #38bdf8;
+            color: #0b0f19;
+            transform: translateY(-2px);
+        }
 
         /* Grid Section */
         .grid-section { max-width: 1200px; margin: 5rem auto; padding: 0 2rem; }
@@ -498,15 +499,10 @@
                     </ul>
                 </li>
 
-                <!-- MORE DROPDOWN with Search Button inside -->
+                <!-- MORE DROPDOWN (Cleaned up) -->
                 <li class="nav-item">
                     <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-search-item">
-                            <button class="dropdown-search-btn" onclick="openSearchModal()">
-                                <i class="fa-solid fa-magnifying-glass"></i> Search Categories
-                            </button>
-                        </li>
                         <li><a href="trading.html">📈 Trading</a></li>
                         <li><a href="wealth-building.html">🚀 Wealth Building</a></li>
                         <li><a href="real-estate.html">🏠 Real Estate</a></li>
@@ -585,7 +581,14 @@
     <main class="hero">
         <h1>Empowering Your Financial Future</h1>
         <p>Actionable market analysis, personal finance strategies, and smart investing tools to help you build and grow long-term wealth.</p>
-        <a href="#features" class="btn-primary">Explore Resources</a>
+        
+        <!-- Hero Buttons (Explore Resources & Search Categories) -->
+        <div class="hero-buttons">
+            <a href="#features" class="btn-primary">Explore Resources</a>
+            <button class="btn-search-category" onclick="openSearchModal()">
+                <i class="fa-solid fa-magnifying-glass"></i> Search Categories
+            </button>
+        </div>
     </main>
 
     <!-- 6 Columns Feature Grid -->
