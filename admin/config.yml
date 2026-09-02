@@ -1,10 +1,6 @@
 backend:
-  name: github
-  repo: subhashdissanayaka-byte/valtivra
+  name: git-gateway
   branch: main
-  client_id: 1e1270610465cf8e77dad7342838f7e8dcb6bc2d
-  base_url: https://decap-cms-oauth.netlify.app
-  site_id: valtivra.pages.dev
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
