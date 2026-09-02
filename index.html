@@ -24,7 +24,7 @@
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -49,7 +49,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 0;
             padding: 0;
             align-items: center;
@@ -63,12 +63,12 @@
             color: #94a3b8;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             padding: 0.5rem 0;
             transition: 0.3s;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         .nav-item:hover > a {
@@ -101,11 +101,11 @@
         }
 
         .dropdown-menu li a {
-            padding: 0.7rem 1.2rem;
+            padding: 0.6rem 1.2rem;
             color: #cbd5e1;
             text-decoration: none;
             display: block;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             white-space: nowrap;
         }
 
@@ -262,7 +262,8 @@
             }
 
             .nav-links.active {
-                max-height: 500px;
+                max-height: 600px;
+                overflow-y: auto;
                 padding: 15px 20px;
             }
 
@@ -304,26 +305,120 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 
+                <!-- 1. Investing -->
                 <li class="nav-item">
-                    <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="investment.html">Investment Calculator</a></li>
-                        <li><a href="crypto.html">Crypto Profit</a></li>
-                        <li><a href="stocks.html">Stocks & Equities</a></li>
+                        <li><a href="stocks-equities.html">Stocks & Equities</a></li>
+                        <li><a href="etfs.html">ETFs</a></li>
+                        <li><a href="mutual-funds.html">Mutual Funds</a></li>
+                        <li><a href="bonds.html">Bonds</a></li>
+                        <li><a href="dividend-investing.html">Dividend Investing</a></li>
                     </ul>
                 </li>
 
+                <!-- 2. Stock Market -->
                 <li class="nav-item">
-                    <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <a href="#">Stock Market <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="loan.html">Loan Calculator</a></li>
-                        <li><a href="tax.html">Tax Calculator</a></li>
-                        <li><a href="budget.html">Budgeting Tools</a></li>
+                        <li><a href="market-news.html">Market News</a></li>
+                        <li><a href="stock-analysis.html">Stock Analysis</a></li>
+                        <li><a href="ipos.html">IPOs</a></li>
+                        <li><a href="market-indices.html">Market Indices</a></li>
+                        <li><a href="earnings.html">Earnings & Results</a></li>
                     </ul>
                 </li>
 
-                <li><a href="markets.html">Markets</a></li>
-                <li><a href="tools.html">Tools</a></li>
+                <!-- 3. Personal Finance -->
+                <li class="nav-item">
+                    <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="budgeting.html">Budgeting</a></li>
+                        <li><a href="saving-money.html">Saving Money</a></li>
+                        <li><a href="credit-debt.html">Credit & Debt</a></li>
+                        <li><a href="banking.html">Banking</a></li>
+                        <li><a href="financial-planning.html">Financial Planning</a></li>
+                    </ul>
+                </li>
+
+                <!-- 4. Cryptocurrency -->
+                <li class="nav-item">
+                    <a href="#">Crypto <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="bitcoin.html">Bitcoin</a></li>
+                        <li><a href="ethereum.html">Ethereum</a></li>
+                        <li><a href="altcoins.html">Altcoins</a></li>
+                        <li><a href="defi.html">DeFi</a></li>
+                        <li><a href="crypto-regulation.html">Crypto Regulation</a></li>
+                    </ul>
+                </li>
+
+                <!-- 5. Forex -->
+                <li class="nav-item">
+                    <a href="#">Forex <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="currency-markets.html">Currency Markets</a></li>
+                        <li><a href="forex-news.html">Forex News</a></li>
+                        <li><a href="trading-strategies.html">Trading Strategies</a></li>
+                        <li><a href="major-pairs.html">Major Currency Pairs</a></li>
+                        <li><a href="central-banks.html">Central Banks</a></li>
+                    </ul>
+                </li>
+
+                <!-- 6. Business & Economy -->
+                <li class="nav-item">
+                    <a href="#">Business <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="global-economy.html">Global Economy</a></li>
+                        <li><a href="business-news.html">Business News</a></li>
+                        <li><a href="economic-indicators.html">Economic Indicators</a></li>
+                        <li><a href="inflation.html">Inflation</a></li>
+                        <li><a href="interest-rates.html">Interest Rates</a></li>
+                    </ul>
+                </li>
+
+                <!-- MORE DROPDOWN (Remaining Categories: 7 to 12) -->
+                <li class="nav-item">
+                    <a href="#">More <i class="fa-solid fa-chevron-down" style="font-size:0.6rem;"></i></a>
+                    <ul class="dropdown-menu">
+                        <!-- 7. Trading -->
+                        <li><a href="day-trading.html">📈 Day Trading</a></li>
+                        <li><a href="swing-trading.html">📉 Swing Trading</a></li>
+                        <li><a href="technical-analysis.html">📊 Technical Analysis</a></li>
+                        <li><a href="options-trading.html">📋 Options Trading</a></li>
+                        <li><a href="futures.html">📑 Futures</a></li>
+                        <!-- 8. Wealth Building -->
+                        <li><a href="financial-independence.html">🚀 Financial Independence</a></li>
+                        <li><a href="retirement-planning.html">🏖️ Retirement Planning</a></li>
+                        <li><a href="passive-income.html">💵 Passive Income</a></li>
+                        <li><a href="wealth-management.html">💼 Wealth Management</a></li>
+                        <li><a href="tax-strategies.html">📑 Tax Strategies</a></li>
+                        <!-- 9. Real Estate -->
+                        <li><a href="property-investing.html">🏠 Property Investing</a></li>
+                        <li><a href="reits.html">🏢 REITs</a></li>
+                        <li><a href="real-estate-market.html">🏘️ Real Estate Market</a></li>
+                        <li><a href="rental-properties.html">🔑 Rental Properties</a></li>
+                        <li><a href="mortgage-financing.html">📝 Mortgage & Financing</a></li>
+                        <!-- 10. Banking & FinTech -->
+                        <li><a href="digital-banking.html">💳 Digital Banking</a></li>
+                        <li><a href="credit-cards.html">💳 Credit Cards</a></li>
+                        <li><a href="fintech.html">⚡ FinTech</a></li>
+                        <li><a href="payments.html">📱 Payments</a></li>
+                        <li><a href="banking-news.html">📰 Banking News</a></li>
+                        <!-- 11. Commodities -->
+                        <li><a href="gold.html">🪙 Gold</a></li>
+                        <li><a href="silver.html">🪙 Silver</a></li>
+                        <li><a href="oil-gas.html">🛢️ Oil & Gas</a></li>
+                        <li><a href="agriculture.html">🌾 Agriculture</a></li>
+                        <li><a href="commodity-markets.html">📊 Commodity Markets</a></li>
+                        <!-- 12. Financial Education -->
+                        <li><a href="investing-basics.html">📚 Investing Basics</a></li>
+                        <li><a href="money-management.html">💡 Money Management</a></li>
+                        <li><a href="stock-market-basics.html">📖 Stock Market Basics</a></li>
+                        <li><a href="trading-basics.html">📘 Trading Basics</a></li>
+                        <li><a href="financial-glossary.html">📖 Financial Glossary</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </header>
@@ -405,10 +500,10 @@
     </section>
 
     <!-- Footer Section -->
-    <site-footer class="site-footer">
+    <footer class="site-footer">
         <p class="disclaimer">Disclaimer: VALTIVRA is a financial media outlet providing educational content. We do not offer personalized investment or financial advice.</p>
         <p>&copy; 2026 VALTIVRA.COM. All rights reserved.</p>
-    </site-footer>
+    </footer>
 
     <!-- JavaScript -->
     <script>
