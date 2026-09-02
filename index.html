@@ -71,7 +71,6 @@
         .disclaimer { max-width: 800px; margin: 0 auto; color: #475569; font-size: 0.8rem; line-height: 1.4; }
 
        /* Modal Box (Dark Theme එකට හැරවීම) */
-        <center>
 .calc-modal-content {
     background-color: #1a2234; /* වෙබ් අඩවියේ පසුබිමට ගැළපෙන Dark Background එකක් */
     padding: 20px 30px;
@@ -125,7 +124,22 @@
     transform: translateX(3px);
     color: #38bdf8 !important;
 }
-        </center>
+        /* More Calculators Trigger Text - මැදට ගැනීමට */
+.more-calculators-trigger {
+    text-align: center;      /* අකුරු මැදට ගනී */
+    margin: 20px auto;       /* ඉහළ පහළ පරතරය තබා වම් දකුණු ස්වයංක්‍රීයව මැද කරයි */
+    display: block;          /* Block element එකක් ලෙස සකසයි */
+    cursor: pointer;
+    color: #38bdf8;          /* සයිට් එකේ ත්‍රීම් එකට ගැළපෙන පාටක් */
+    font-weight: bold;
+    width: fit-content;      /* අවශ්‍ය ප්‍රමාණයට පමණක් ඉඩ ගනී */
+    transition: color 0.2s;
+}
+
+.more-calculators-trigger:hover {
+    color: #6366f1;
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
