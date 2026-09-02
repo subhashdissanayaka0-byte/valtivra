@@ -299,48 +299,26 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span></a>
-            <ul class="nav-links">
-                <li class="nav-item">
-                    <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Stocks</a></li>
-                        <li><a href="#">ETFs & Funds</a></li>
-                        <li><a href="#">Dividends</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Budgeting</a></li>
-                        <li><a href="#">Debt Management</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="#">Markets</a></li>
-                <li class="nav-item"><a href="#calculator">Tools</a></li>
-            </ul>
-        </div>
-    </header>
-    <header class="site-header">
+   <!-- Header Navigation -->
+<header class="site-header">
     <div class="nav-container">
-        <!-- Logo එක -->
-        <a href="index.html" class="logo">VALTIVRA<span>.COM</span></a>
+        <!-- Logo එක (FontAwesome අයිකන් එක සමඟ) -->
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span>
+        </a>
 
         <!-- Mobile Menu Toggle Icon (මෙය පෙනෙන්නේ ෆෝන් එකෙන් බලද්දී පමණි) -->
         <div class="menu-toggle" id="mobile-menu" onclick="toggleMobileMenu()">
             ☰
         </div>
 
-        <!-- Navigation Links -->
+        <!-- Navigation Links & Subcategories -->
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             
             <!-- Investing Category & Subcategories -->
-            <li class="dropdown">
-                <a href="#">Investing ▾</a>
+            <li class="dropdown nav-item">
+                <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="investment.html">Investment Calculator</a></li>
                     <li><a href="crypto.html">Crypto Profit</a></li>
@@ -349,8 +327,8 @@
             </li>
 
             <!-- Personal Finance Category & Subcategories -->
-            <li class="dropdown">
-                <a href="#">Personal Finance ▾</a>
+            <li class="dropdown nav-item">
+                <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="loan.html">Loan Calculator</a></li>
                     <li><a href="tax.html">Tax Calculator</a></li>
