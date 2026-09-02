@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALTIVRA - Finance & Wealth Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #0b0f19; color: #e2e8f0; overflow-x: hidden; }
+
+        /* Header & Nav */
+        header { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: #38bdf8; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-item { position: relative; }
+        .nav-item > a { color: #94a3b8; text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 0.5rem 0; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
+        .nav-item:hover > a { color: #38bdf8; }
+        
+        /* Dropdown */
+        .dropdown { position: absolute; top: 100%; left: 0; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; list-style: none; padding: 0.5rem 0; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown li a { padding: 0.7rem 1.2rem; color: #cbd5e1; text-decoration: none; display: block; font-size: 0.88rem; }
+        .dropdown li a:hover { background: rgba(56, 189, 248, 0.1); color: #38bdf8; }
+
+        /* Hero Section */
+        .hero { max-width: 1000px; margin: 4rem auto 2rem auto; text-align: center; padding: 0 2rem; }
+        .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1.2rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.15rem; color: #94a3b8; line-height: 1.6; margin-bottom: 2rem; }
+        .btn-primary { background: #0284c7; color: white; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { background: #0369a1; transform: translateY(-2px); }
+
+        /* Grid Section */
+        .grid-section { max-width: 1200px; margin: 5rem auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem; }
+        .section-title p { color: #64748b; }
+        
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.08); padding: 2rem; border-radius: 12px; transition: 0.3s; }
+        .card:hover { border-color: #38bdf8; transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: #38bdf8; margin-bottom: 1rem; }
+        .card h3 { font-size: 1.3rem; color: #f8fafc; margin-bottom: 0.8rem; }
+        .card p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+
+        /* Interactive Calculator Section */
+        .calc-section { max-width: 900px; margin: 4rem auto; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.2); padding: 2.5rem; border-radius: 16px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+        .input-group { margin-bottom: 1.2rem; }
+        .input-group label { display: block; color: #94a3b8; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .input-group input { width: 100%; padding: 0.8rem; background: #0b0f19; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; font-size: 1rem; }
+        .calc-result { background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2); padding: 1.5rem; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        .calc-result h4 { color: #94a3b8; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .calc-result .total { font-size: 2.2rem; color: #38bdf8; font-weight: 700; }
+
+        /* Newsletter Box */
+        .newsletter { max-width: 800px; margin: 5rem auto; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid rgba(255, 255, 255, 0.1); padding: 3rem; border-radius: 16px; text-align: center; }
+        .newsletter h3 { font-size: 1.8rem; color: #fff; margin-bottom: 0.8rem; }
+        .newsletter p { color: #94a3b8; margin-bottom: 1.5rem; }
+        .newsletter-form { display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto; }
+        .newsletter-form input { flex: 1; padding: 0.8rem 1.2rem; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1); background: #0b0f19; color: #fff; outline: none; }
+
+        /* Footer */
+        footer { background: #070a12; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 3rem 2rem 1.5rem 2rem; margin-top: 5rem; text-align: center; }
+        footer p { color: #64748b; font-size: 0.85rem; margin-top: 1.5rem; }
+        .disclaimer { max-width: 800px; margin: 0 auto; color: #475569; font-size: 0.8rem; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-chart-line" style="color:#38bdf8;"></i> VALTIVRA<span>.COM</span></a>
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#">Investing <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Stocks</a></li>
+                        <li><a href="#">ETFs & Funds</a></li>
+                        <li><a href="#">Dividends</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Personal Finance <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#">Budgeting</a></li>
+                        <li><a href="#">Debt Management</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#">Markets</a></li>
+                <li class="nav-item"><a href="#calculator">Tools</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <h1>Empowering Your Financial Future</h1>
+        <p>Actionable market analysis, personal finance strategies, and smart investing tools to help you build and grow long-term wealth.</p>
+        <a href="#features" class="btn-primary">Explore Resources</a>
+    </main>
+
+    <!-- 6 Columns Feature Grid -->
+    <section class="grid-section" id="features">
+        <div class="section-title">
+            <h2>Why Smart Investors Trust VALTIVRA</h2>
+            <p>Reliable market insights and resources designed for modern wealth building.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card"><i class="fa-solid fa-chart-pie"></i><h3>Market Analysis</h3><p>Deep dives into global stock markets, economic trends, inflation data, and interest rate movements.</p></div>
+            <div class="card"><i class="fa-solid fa-book-open"></i><h3>Smart Investing Guides</h3><p>Step-by-step educational resources on Stocks, ETFs, Index Funds, Dividends, and portfolio growth.</p></div>
+            <div class="card"><i class="fa-solid fa-calculator"></i><h3>Interactive Financial Tools</h3><p>Free, easy-to-use calculators for Compound Interest, Retirement Planning, and Investment Growth.</p></div>
+            <div class="card"><i class="fa-solid fa-wallet"></i><h3>Personal Finance</h3><p>Actionable advice on saving, budgeting, managing debt, and optimizing your credit score.</p></div>
+            <div class="card"><i class="fa-solid fa-seedling"></i><h3>Wealth & Passive Income</h3><p>Practical ways to generate passive income, build real estate portfolios, and scale long-term wealth.</p></div>
+            <div class="card"><i class="fa-solid fa-shield-halved"></i><h3>Unbiased & Transparent</h3><p>Strict editorial standards ensuring clear, fact-checked, and independent research without bias.</p></div>
+        </div>
+    </section>
+
+    <!-- Live Interactive Calculator -->
+    <section class="calc-section" id="calculator">
+        <h2 style="text-align: center; color: #fff;">Compound Interest Calculator</h2>
+        <div class="calc-grid">
+            <div>
+                <div class="input-group">
+                    <label>Initial Principal ($)</label>
+                    <input type="number" id="principal" value="10000">
+                </div>
+                <div class="input-group">
+                    <label>Annual Interest Rate (%)</label>
+                    <input type="number" id="rate" value="8">
+                </div>
+                <div class="input-group">
+                    <label>Time Period (Years)</label>
+                    <input type="number" id="years" value="10">
+                </div>
+                <button class="btn-primary" onclick="calculateGrowth()" style="width: 100%;">Calculate Growth</button>
+            </div>
+            <div class="calc-result">
+                <h4>Estimated Future Balance</h4>
+                <div class="total" id="resultDisplay">$21,589.25</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Brief Sign-up -->
+    <section class="newsletter">
+        <h3>The VALTIVRA Brief</h3>
+        <p>Get weekly market analysis, top 5 stock trends, and economic updates straight to your inbox.</p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email address">
+            <button class="btn-primary">Subscribe</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="disclaimer">Disclaimer: VALTIVRA is a financial media outlet providing educational content. We do not offer personalized investment or financial advice.</p>
+        <p>&copy; 2026 VALTIVRA.COM. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Calculator Functionality -->
+    <script>
+        function calculateGrowth() {
+            const p = parseFloat(document.getElementById('principal').value) || 0;
+            const r = parseFloat(document.getElementById('rate').value) / 100 || 0;
+            const t = parseFloat(document.getElementById('years').value) || 0;
+            
+            const total = p * Math.pow((1 + r), t);
+            document.getElementById('resultDisplay').innerText = '$' + total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+    </script>
+    <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>
