@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Profit Calculator - Valtivra</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #0b0f19; color: #fff; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; }
+        .container { background: #1a2234; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); width: 100%; max-width: 450px; border: 1px solid #2d3748; }
+        h2 { color: #38bdf8; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #a0aec0; }
+        input { width: 100%; padding: 10px; background: #252f3f; border: 1px solid #2d3748; color: #fff; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: #0284c7; border: none; color: white; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #0369a1; }
+        .result { margin-top: 20px; text-align: center; font-size: 18px; color: #38bdf8; }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #a0aec0; text-decoration: none; }
+        .back-link:hover { color: #fff; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🪙 Crypto Profit Calculator</h2>
+        <div class="form-group">
+            <label>Initial Investment ($)</label>
+            <input type="number" id="cryptoInvested" value="1000">
+        </div>
+        <div class="form-group">
+            <label>Buying Price ($)</label>
+            <input type="number" id="buyPrice" value="50000">
+        </div>
+        <div class="form-group">
+            <label>Selling Price ($)</label>
+            <input type="number" id="sellPrice" value="70000">
+        </div>
+        <button onclick="calculateCrypto()">Calculate Profit</button>
+        <div class="result" id="cryptoResult"></div>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+    <script>
+        function calculateCrypto() {
+            let invested = parseFloat(document.getElementById('cryptoInvested').value);
+            let buy = parseFloat(document.getElementById('buyPrice').value);
+            let sell = parseFloat(document.getElementById('sellPrice').value);
+            let coins = invested / buy;
+            let finalValue = coins * sell;
+            let profit = finalValue - invested;
+            let roi = (profit / invested) * 100;
+            document.getElementById('cryptoResult').innerHTML = "Profit: $" + profit.toFixed(2) + " (" + roi.toFixed(1) + "%)";
+        }
+    </script>
+</body>
+</html>
