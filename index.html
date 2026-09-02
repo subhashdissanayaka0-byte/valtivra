@@ -70,44 +70,18 @@
         footer p { color: #64748b; font-size: 0.85rem; margin-top: 1.5rem; }
         .disclaimer { max-width: 800px; margin: 0 auto; color: #475569; font-size: 0.8rem; line-height: 1.4; }
 
-        /* More Calculators Trigger Text */
-.more-calculators-trigger {
-    text-align: center;
-    margin-top: 15px;
-    cursor: pointer;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.2s;
-}
-.more-calculators-trigger:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Modal Background Overlay */
-.calc-modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-/* Modal Box */
+       /* Modal Box (Dark Theme එකට හැරවීම) */
 .calc-modal-content {
-    background-color: #fff;
+    background-color: #1a2234; /* වෙබ් අඩවියේ පසුබිමට ගැළපෙන Dark Background එකක් */
     padding: 20px 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    max-width: 350px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     position: relative;
     animation: fadeIn 0.3s ease;
+    text-align: left;
+    border: 1px solid #2d3748;
 }
 
 /* Close Button (x) */
@@ -117,10 +91,15 @@
     right: 15px;
     font-size: 24px;
     cursor: pointer;
-    color: #666;
+    color: #a0aec0;
 }
 .close-btn:hover {
-    color: #000;
+    color: #ffffff;
+}
+
+/* Modal Title එක */
+.calc-modal-content h3 {
+    color: #ffffff !important;
 }
 
 /* Calculator List inside Pop-up */
@@ -131,21 +110,19 @@
 }
 .calc-list li {
     padding: 12px 15px;
-    margin-bottom: 8px;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #252f3f; /* ලැයිස්තු අයිතම සඳහා අඳුරු පැහැයක් */
+    border: 1px solid #2d3748;
+    border-radius: 6px;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
+    font-weight: 500;
+    color: #ffffff !important; /* අකුරු පැහැදිලි සුදු පාටට */
 }
 .calc-list li:hover {
-    background: #e2e6ea;
+    background: #2f3e56;
     transform: translateX(3px);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    color: #38bdf8 !important;
 }
     </style>
 </head>
