@@ -18,3 +18,10 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
       - { label: "Short Description", name: "description", widget: "text" }
       - { label: "Body Content", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Investing", "Personal Finance", "Markets", "Crypto"] }
+      - { label: "Sub Category", name: "sub_category", widget: "string" } # මෙන්න මේක අලුතින් එකතු කරන්න
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Body Content", name: "body", widget: "markdown" }
