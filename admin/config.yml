@@ -13,20 +13,51 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Investing", "Personal Finance", "Markets", "Crypto"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Investing", "Stock Market", "Personal Finance", "Crypto", "Forex", "Business & Economy", "More"] }
       - { 
           label: "Sub Category", 
           name: "sub_category", 
           widget: "select", 
           options: [
-            "Stocks & Equities", 
-            "Real Estate", 
-            "Budgeting", 
-            "Banking", 
-            "Altcoins", 
-            "Bitcoin"
+            "Investing - Stocks & Equities",
+            "Investing - ETFs",
+            "Investing - Mutual Funds",
+            "Investing - Bonds",
+            "Investing - Dividend Investing",
+            "Stock Market - Market News",
+            "Stock Market - Stock Analysis",
+            "Stock Market - IPOs",
+            "Stock Market - Market Indices",
+            "Stock Market - Earnings",
+            "Personal Finance - Budgeting",
+            "Personal Finance - Saving Money",
+            "Personal Finance - Credit & Debt",
+            "Personal Finance - Banking",
+            "Personal Finance - Financial Planning",
+            "Crypto - Bitcoin",
+            "Crypto - Ethereum",
+            "Crypto - Altcoins",
+            "Crypto - DeFi",
+            "Crypto - Crypto Regulation",
+            "Forex - Currency Markets",
+            "Forex - Forex News",
+            "Forex - Trading Strategies",
+            "Forex - Major Pairs",
+            "Forex - Central Banks",
+            "Business & Economy - Global Economy",
+            "Business & Economy - Business News",
+            "Business & Economy - Economic Indicators",
+            "Business & Economy - Inflation",
+            "Business & Economy - Interest Rates",
+            "More - Trading",
+            "More - Wealth Building",
+            "More - Real Estate",
+            "More - Banking & Fintech",
+            "More - Commodities",
+            "More - Financial Education"
           ] 
         }
+      - { label: "Read Time", name: "read_time", widget: "string", default: "5 min read" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Short Description", name: "description", widget: "text" }
