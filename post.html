@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Article | VALTIVRA</title>
-    <!-- Tailwind CSS හෝ ඔයාලා පාවිච්චි කරන CSS ස්ටයිල්ස් මෙතැනට දෙන්න -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Markdown HTML වලට හරවන්න Marked.js ලයිබ්‍රරිය -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased">
@@ -20,10 +18,15 @@
     <!-- Main Article Content -->
     <main class="max-w-3xl mx-auto px-6 py-12">
         <h1 id="article-title" class="text-3xl md:text-4xl font-extrabold mb-4"></h1>
-        <div class="flex items-center space-x-4 text-sm text-slate-400 mb-8 pb-4 border-b border-slate-800">
+        
+        <div class="flex flex-wrap items-center space-x-4 text-sm text-slate-400 mb-8 pb-4 border-b border-slate-800 gap-y-2">
             <span id="article-date"></span>
             <span>•</span>
             <span id="article-category" class="bg-blue-600/20 text-blue-400 px-2.5 py-1 rounded-full text-xs font-semibold"></span>
+            <span>•</span>
+            <span id="article-sub-category" class="text-slate-300 font-medium"></span>
+            <span>•</span>
+            <span id="article-read-time"></span>
         </div>
         
         <!-- Markdown content එක HTML බවට පත්වී මෙතැනට වැටේ -->
@@ -32,7 +35,7 @@
         </div>
     </main>
 
-  <script>
+    <script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
@@ -49,16 +52,22 @@
                         const titleMatch = frontmatter.match(/title:\s*"?(.*?)"?$/m);
                         const dateMatch = frontmatter.match(/date:\s*(.*?)$/m);
                         const catMatch = frontmatter.match(/category:\s*"?(.*?)"?$/m);
+                        const subCatMatch = frontmatter.match(/sub_category:\s*"?(.*?)"?$/m);
+                        const readTimeMatch = frontmatter.match(/read_time:\s*"?(.*?)"?$/m);
 
                         const title = titleMatch ? titleMatch[1] : "Untitled Article";
                         const date = dateMatch ? dateMatch[1] : "";
                         const category = catMatch ? catMatch[1] : "";
+                        const subCategory = subCatMatch ? subCatMatch[1] : "";
+                        const readTime = readTimeMatch ? readTimeMatch[1] : "";
 
                         // HTML වලට ඩේටා සෙට් කිරීම
                         document.getElementById('page-title').innerText = title + " | VALTIVRA";
                         document.getElementById('article-title').innerText = title;
                         document.getElementById('article-date').innerText = date;
                         document.getElementById('article-category').innerText = category;
+                        document.getElementById('article-sub-category').innerText = subCategory;
+                        document.getElementById('article-read-time').innerText = readTime;
 
                         // Markdown content එක HTML වලට හරවා පිටුවට දැමීම
                         document.getElementById('article-content').innerHTML = marked.parse(bodyContent);
