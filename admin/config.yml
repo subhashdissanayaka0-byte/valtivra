@@ -14,7 +14,19 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Investing", "Personal Finance", "Markets", "Crypto"] }
-      - { label: "Sub Category", name: "sub_category", widget: "string" }
+      - { 
+          label: "Sub Category", 
+          name: "sub_category", 
+          widget: "select", 
+          options: [
+            "Stocks & Equities", 
+            "Real Estate", 
+            "Budgeting", 
+            "Banking", 
+            "Altcoins", 
+            "Bitcoin"
+          ] 
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Short Description", name: "description", widget: "text" }
