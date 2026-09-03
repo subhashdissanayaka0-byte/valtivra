@@ -32,27 +32,23 @@
         </div>
     </main>
 
-    <!-- JavaScript මඟින් Markdown ෆයිල් එක කියවා පෙන්වීම -->
-    <script>
-        // URL එකෙන් ආටිකල් නම ලබා ගැනීම (උදා: post.html?file=2026-09-03-xxxxxx.md)
+  <script>
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
 
         if (fileName) {
-            // content/blog/ ෆෝල්ඩර් එකෙන් අදාළ Markdown ෆයිල් එක Fetch කර ගැනීම
             fetch(`content/blog/${fileName}`)
                 .then(response => response.text())
                 .then(markdownText => {
-                    // Frontmatter (Title, Date, Category) සහ Main Content වෙන් කර ගැනීම
                     const parts = markdownText.split('---');
                     if (parts.length >= 3) {
                         const frontmatter = parts[1];
                         const bodyContent = parts.slice(2).join('---');
 
-                        // Frontmatter එකෙන් විස්තර ලබා ගැනීම
+                        // Frontmatter එකෙන් ඩේටා ලබා ගැනීම
                         const titleMatch = frontmatter.match(/title:\s*"?(.*?)"?$/m);
                         const dateMatch = frontmatter.match(/date:\s*(.*?)$/m);
-                        const catMatch = frontmatter.match(/category:\s*(.*?)$/m);
+                        const catMatch = frontmatter.match(/category:\s*"?(.*?)"?$/m);
 
                         const title = titleMatch ? titleMatch[1] : "Untitled Article";
                         const date = dateMatch ? dateMatch[1] : "";
